@@ -1,5 +1,7 @@
 #! /usr/bin/env ruby
 
+require_relative 'parser'
+
 class Assembler
 
 	def initialize(asm_file, hack_file)
@@ -9,9 +11,9 @@ class Assembler
 	end
 
 	def assemble!
-		# hack_instructions = @parser.parse_asm 
-		# @hack_file << hack_instructions
+		@parser.parse.each {|instruction| @hack_file << instruction << "\n" }
 	end
+
 
 	def instructions_from_file
 		lines = @asm_file.readlines
