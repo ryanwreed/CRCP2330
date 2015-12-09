@@ -28,6 +28,14 @@ class SquareGame {
         return this;
     }
 
+    //if ((x+size) > 510)
+    //    let x = 1
+
+    // if ((y+size) > 254)
+    //    let y = 1
+
+
+
     /** Deallocates the object's memory. */
     method void dispose() {
         do square.dispose();

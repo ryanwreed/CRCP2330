@@ -10,9 +10,11 @@ class Main {
 
     /** Initializes a new game and starts it. */    
     function void main() {
+
+    	var SquareGame game;
     	do Output.printString("Hello World");
     	do Output.println();
-        var SquareGame game;
+       
 
         let game = SquareGame.new();
         do game.run();
