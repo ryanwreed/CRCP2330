@@ -27,7 +27,8 @@ class Parser
 
 	def assemble_c_command(instruciton)
 		command = "111"
-		command << dest(mnemonic) << comp(mnemonic) << jump(mnemonic)
+		# TODO
+		command << Code.dest(dest_mnemonic) << Code.comp(comp_mnemonic) << Code.jump(jump_mnemonic)
 	end
 
 	def command_type(instruciton)

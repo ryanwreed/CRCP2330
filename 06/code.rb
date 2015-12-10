@@ -42,7 +42,7 @@ class Code
 		'D|M' => '1010101'
 	}
 
-	JUMP {
+	JUMP = {
 		nil => '',
 		JGT => '001',
 		JEQ => '010',
@@ -53,14 +53,14 @@ class Code
 		JMP => '111'
 	}
 
-	def dest(mnemonic)
+	def self.dest(mnemonic)
 		DEST[mnemonic]
 	end
 
-	def comp(mnemonic)
+	def self.comp(mnemonic)
 		COMP[mnemonic]
 	end
 
-	def jump(mnemonic)
+	def self.jump(mnemonic)
 		JUMP[mnemonic]
 	end
