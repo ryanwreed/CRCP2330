@@ -1,6 +1,7 @@
 #! /usr/bin/env ruby
 
 require_relative 'parser'
+require_relative 'code'
 
 class Assembler
 

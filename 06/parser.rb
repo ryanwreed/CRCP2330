@@ -24,15 +24,17 @@ class Parser
 	def constant(value)
 		"%015b" % value
 	end
+
 	def assemble_c_command(instruciton)
 		command = "111"
+		command << dest(mnemonic) << comp(mnemonic) << jump(mnemonic)
 	end
 
 	def command_type(instruciton)
 		if instruciton.start_with?("@")
 			:a_command
 		else
-			:c_command
+			:c_command 
 		end
 	end
 end
