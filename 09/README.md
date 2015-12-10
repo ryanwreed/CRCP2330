@@ -1,0 +1,2 @@
+# Project9
+The Square game operates like the original program (right arrow = move right, left arrow = move left, down arrow = move down, up arrow = move up, x = increment size, z = decrement size, q = quit program). The different is that my program will modify the Square game by removing the movement boundaries. Whenever the square crosses a boundary on either the x-axis or y-axis of the 510 by 254 screen, it will be teleported to the other end of the axis. For example, if the square passes the x-axis boundary at 510, the new x value will be 0.
