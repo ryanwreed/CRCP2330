@@ -6,33 +6,33 @@ class Parser
 	end
 
 	def parse
-		@assembly_instructions.each do |instruciton|
-			if command_type(instruciton) == :a_command
-				@machine_instructions << assemble_a_command(instruciton)
-			elsif command_type(instruciton) == :c_command
-				@machine_instructions << assemble_c_command(instruciton)
+		@assembly_instructions.each do |instruction|
+			if command_type(instruction) == :a_command
+				@machine_instructions << assemble_a_command(instruction)
+			elsif command_type(instruction) == :c_command
+				@machine_instructions << assemble_c_command(instruction)
 			end
 		end
 		@machine_instructions
 	end
 
-	def assemble_a_command(instruciton)
+	def assemble_a_command(instruction)
 		command = '0'
-		command << constant(instruction[1..-1]
+		command << constant(instruction[1..-1])
 	end
 
 	def constant(value)
 		"%015b" % value
 	end
 
-	def assemble_c_command(instruciton)
+	def assemble_c_command(instruction)
 		command = "111"
 		# TODO
 		command << Code.dest(dest_mnemonic) << Code.comp(comp_mnemonic) << Code.jump(jump_mnemonic)
 	end
 
-	def command_type(instruciton)
-		if instruciton.start_with?("@")
+	def command_type(instruction)
+		if instruction.start_with?("@")
 			:a_command
 		else
 			:c_command 

@@ -44,23 +44,25 @@ class Code
 
 	JUMP = {
 		nil => '',
-		JGT => '001',
-		JEQ => '010',
-		JGE => '011',
-		JLT => '100',
-		JNE => '101',
-		JLE => '110',
-		JMP => '111'
+		'JGT' => '001',
+		'JEQ' => '010',
+		'JGE' => '011',
+		'JLT' => '100',
+		'JNE' => '101',
+		'JLE' => '110',
+		'JMP' => '111'
 	}
 
-	def self.dest(mnemonic)
-		DEST[mnemonic]
+	def self.dest(dest_mnemonic)
+		DEST[dest_mnemonic]
 	end
 
-	def self.comp(mnemonic)
-		COMP[mnemonic]
+	def self.comp(comp_mnemonic)
+		COMP[comp_mnemonic]
 	end
 
-	def self.jump(mnemonic)
-		JUMP[mnemonic]
+	def self.jump(jump_mnemonic)
+		JUMP[jump_mnemonic]
 	end
+
+end
