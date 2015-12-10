@@ -76,6 +76,12 @@ class Square {
             do Screen.setColor(true);
             do Screen.drawRectangle(x, y, x + size, y + 1);
         }
+        //teleport to bottom of screen
+         if (y < 1) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, x + size, y + size);
+            let y = (254-size);   
+        }
         return;
     }
 
@@ -87,6 +93,13 @@ class Square {
             let y = y + 2;
             do Screen.setColor(true);
             do Screen.drawRectangle(x, (y + size) - 1, x + size, y + size);
+        }
+
+        //teleport to top of screen
+         if ((y + size) > 253) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, x + size, y + size);
+            let y = 0;   
         }
         return;
     }
@@ -100,6 +113,13 @@ class Square {
             do Screen.setColor(true);
             do Screen.drawRectangle(x, y, x + 1, y + size);
         }
+
+        //teleport to right side of screen 
+        if ((x = 0)  {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, x + size, y + size);
+            let x = (510-size);  
+            }
         return;
     }
 
@@ -112,6 +132,7 @@ class Square {
             do Screen.setColor(true);
             do Screen.drawRectangle((x + size) - 1, y, x + size, y + size);
         }
+        //teleport to left side of screen
         if ((x + size) > 509) {
             do Screen.setColor(false);
             do Screen.drawRectangle(x, y, x + size, y + size);
